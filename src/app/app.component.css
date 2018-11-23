@@ -1,0 +1,44 @@
+BODY{
+    MARGIN:0;
+    PADDING:0;
+ }
+ .NAV{
+    position:fixed;
+    top:0;
+    z-index:1000;
+    WIDTH:100%;
+    HEIGHT:50PX;
+    BACKGROUND: #28a0e6;
+ }
+.NAV H3{
+    PADDING:10PX 0 0PX 10PX;
+}
+ .SIDE{
+    top:50px;
+    POSITION:ABSOLUTE;
+    WIDTH:150PX;
+    HEIGHT:100%;
+    BACKGROUND:rgb(240, 233, 233);
+ }
+ .SIDE UL {
+    PADDING:30PX;
+    LIST-STYLE:NONE ;  
+    FONT-SIZE:15PX;
+    FONT-WEIGHT:500;
+ }
+
+ .SIDE UL A:HOVER{
+    FONT-SIZE:15PX;
+    COLOR:rgb(118, 206, 250);
+ }
+ .SIDE UL A:VISITED{
+    FONT-SIZE:21PX;
+    COLOR:LIGHTGREY;
+ }
+ /* .SIDE UL A:FOCUS{
+    FONT-SIZE:21PX;
+    COLOR:white;
+ } */
+ .SIDE UL LI {
+    MARGIN:30PX 0;
+ }

@@ -1,0 +1,55 @@
+
+  <div class="form-content">
+<div class="col-md-4  ">
+
+    <!-- <h3>DELIVERY ADDRESS</h3> -->
+    <form>
+    <table class="table" border="0">   
+        <tr>
+          <td align="right"> Name:</td>
+          <td><input type="text"name="username" class="form-control" value="{{user.name}}" [(ngModel)]="user.name">
+            <div style="color:red;"></div></td>
+        </tr>
+        <tr>
+        <td align="right"> Email:</td>
+        <td><input type="email"name="email" class="form-control" value="{{user.email}}"[(ngModel)]="user.email" >
+          <div style="color:red;"></div></td>
+      </tr>
+        <tr>
+          <td align="right">Address:</td>
+          <td><input type="textarea"name="address" class="form-control" value="{{user.address}}" [(ngModel)]="user.address">
+            <div style="color:red;"></div></td>
+        </tr>
+        <tr>
+          
+          <td align="right">Phone:</td>
+          <td><input type="text"   name="phone"class="form-control" value="{{user.phone}}"
+            [(ngModel)]="user.phone">
+            <div   style="color:red;"></div>
+          </td>
+        </tr>
+        <!-- <tr>
+          <td align="right">Password:</td>
+          <td><input type="password" name="password" class="form-control" placeholder="Password">
+            <div  style="color:red;">{{userService.errors.password}}</div>
+          </td>
+        </tr> -->
+        <tr>
+          <td align="right"></td>
+          <td align="right">
+            <!-- <a [routerLink]="['/payment']">  -->
+           <button type="button"class="btn btn-primary" (click)="update_user(user);">update</button>
+          </td>
+        </tr>
+    
+    </table>
+    </form>
+  </div>
+</div>
+  
+  <!-- <div class="btn-group">
+      <a [routerLink]="['/cart']" class="btn btn-info">BACK TO CART</a>
+      
+  </div>  -->
+  
+  

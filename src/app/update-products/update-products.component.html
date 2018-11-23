@@ -1,0 +1,58 @@
+<!-- <div class="form-content">
+<h1>Update product details </h1>
+
+<a  class="btn btn-primary" > <i class="glyphicon glyphicon-plus"></i> Create New</a>
+<a class="btn btn-primary" > <i class="glyphicon glyphicon-th-list"></i>List</a>
+<!  <a href="#l" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete</a> <br/> <br/> -->
+<!-- <form>
+<table class="table" >
+    
+        <tr> <td align="right" >category:</td> <td><input type="text" name="category" class="form-control" value="{{product.category}}" ></td> </tr>
+        <tr> <td align="right" > Name:</td> <td> <input type="text" name="name" class="form-control" value="{{product.name}}"></td></tr>
+            <tr> <td align="right" > price:</td> <td> <input type="text" name="price" class="form-control" value="{{product.price}}" ></td></tr>
+                <tr> <td align="right" > Image:</td> <td> <input type="text" name="image" class="form-control" value="{{product.image}}" ></td></tr>
+                    <tr> <td align="right" > Description:</td> <td> <input type="text" name="description" class="form-control" value="{{product.description}}" >
+             </td> </tr>
+      
+        <tr> <td align="right" ></td> <td align="right"><button type="button" class="btn btn-primary" > Save </button>  </td> </tr>
+      
+</table>
+</form>
+</div>  -->
+<div class="form-content">
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.price}}</p>
+              <p>{{product.description}}</p>
+              <p>total items:{{product.count}}</p>
+              <img src="{{product.image}}" style="width: 60px" height="60px">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">update data here</h5>
+              <p class="card-text"></p>
+              <table class="table">
+                  <tr>
+                    <td>Name:<input type="text" name="name" class="form-control" value="{{product.name}}" [(ngModel)]="product.name"></td>
+                    <td>price:<input type="text" name="name" class="form-control" value="{{product.price}}" [(ngModel)]="product.price"></td>
+                    <td>count:<input type="text" name="name" class="form-control" value="{{product.count}}" [(ngModel)]="product.count"></td> 
+                    <td>description:<input type="text" name="name" class="form-control" value="{{product.description}}" [(ngModel)]="product.description"></td> 
+                  </tr>
+                  <tr>
+                     <td>Image:<input type="file"  name="image" class="form-control"  (change)="changeListener($event)"  value=""></td>
+    
+                  </tr>
+                  <td><button type="button" class="btn btn-success" (click)="update_product(product);">update</button></td>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+

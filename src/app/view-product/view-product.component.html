@@ -1,0 +1,24 @@
+
+<div class="container">
+  <div class="col-sm-6">
+   
+    <div class="thumbnail">
+        <img src="{{product.image}}"height="300px" width="300px"/>
+      </div> 
+     
+      
+  </div>
+  <div class="col-sm-6">
+    <h2>{{product.name}}</h2>
+     <p> {{product.price}}</p>
+    <h4>HighLights</h4>
+   <li> {{product.description}}</li>
+   <li>{{product.count}}</li>
+   <!-- <li>{{product.id}}</li> -->
+   <br><br>
+   <button type="button" class="buybtn btn btn-danger btn-lg" [routerLink]="['/update-products',product.id]">
+      <span class="glyphicon glyphicon-shopping-pencil"></span>update
+  </button>
+  </div>
+</div>
+

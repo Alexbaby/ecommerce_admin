@@ -1,0 +1,51 @@
+<div class="form-content">
+<h1></h1>
+<!-- 
+
+<a  class="btn btn-success" > <i class="glyphicon glyphicon-plus"></i> Create</a>
+<a class="btn btn-danger"> <i class="glyphicon glyphicon-list"></i> List </a>
+<a class="btn btn-primary" > <i class="glyphicon glyphicon-pencil"></i> Update</a> -->
+<!-- <a  (click)="delete(employee);" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete</a> -->
+<br/> <br/>
+
+<div class="col-sm-9">
+<table border="1" class="table">  
+               
+                  <tr >
+                 <th>CATEGORY <a class="_pointer" name="category" (click)="sort_productlist('category');"><span class="caret"></span></a></th>
+                  <th>NAME <a class="_pointer" name="name"(click)="sort_productlist('name');"><span class="caret"></span></a></th>
+                  <th>PRICE</th>
+                  <th>IMG</th>
+                  <th>DESCRIPTION</th>
+                  <th>total count</th>
+                  <th colspan="3">ACTION</th>
+                </tr>
+                <tr>
+                <td><input type="text" class="form-control" placeholder="category" name="category" (keyup)="search_product(search);" [(ngModel)]="search.category"></td>
+                <td><input type="text" class="form-control" placeholder="name"  name="name" (keyup)="search_product(search);" [(ngModel)]="search.name"></td>
+                <!-- <td><input type="text" class="form-control" placeholder="user id"></td> -->
+                <!-- <td><input type="text" class="form-control" placeholder="user id"></td> -->
+                <!-- <td><input type="text" class="form-control" placeholder="user id"></td>
+                <td><input type="text" class="form-control" placeholder="user id"></td> -->
+                </tr>
+                <tr *ngFor="let p of items">
+                  <td>{{p.category}}</td>
+                  <td>{{p.name}}</td>
+                  <td>{{p.price}}</td>
+                  <td><img src="{{p.image}}" style="width: 50px" height="50px"></td>
+                  <td>{{p.description}}</td>
+                  <td>{{p.count}}</td>
+                  <!-- <td>{{p.id}}</td> -->
+                  <td><a [routerLink]="['/view-product',p.id]" class="btn btn-info"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                  <td><a [routerLink]="['/update-products',p.id]" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a></td>
+                  <td><a class="btn btn-danger" (click)="delete1(p.id);"><i class="glyphicon glyphicon-trash"></i></a></td>
+                </tr>
+      </table>
+      <div class="text-center">
+        <ul class="pagination">
+            <li  *ngFor="let p of pages ;let i= index;"  [ngClass]="{'active': this.page==(i+1)}">
+            <button type="button" class="btn btn-info" id={{i}} [disabled]="this.page==(i+1)" (click)="pageChange(i)">{{p}}</button>                         
+        </ul>
+    </div>
+      </div>
+

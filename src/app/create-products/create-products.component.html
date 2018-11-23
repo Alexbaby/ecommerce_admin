@@ -1,0 +1,37 @@
+ <div class="form-content">
+  <form>
+    <table class="table">
+      <tr>
+<td>    <select (change)="selectChangehandler($event)">
+    <option *ngFor="let p of categorylist">{{p.category_name}}<input type="text"></option>   
+  </select>
+  <input type="text" name="category" value="{{category}}" class="form-control" [(ngModel)]="product.category">
+
+  <!-- <input type="type" name="type" [(ngModel)]="p.category_name">    -->
+        </td>
+        <td>Name:<input type="text" name="name"  placeholder="sony" class="form-control" [(ngModel)]="product.name">
+        </td>
+     
+      </tr>
+      <tr>
+        <td>description:<input type="text" name="name"  placeholder="description" class="form-control" [(ngModel)]="product.description"></td>
+        <td>price:<input type="text" name="name" placeholder="12000" class="form-control" [(ngModel)]="product.price"></td>
+        
+        <td>Count:<input type="text" name="count"  class="form-control" [(ngModel)]="product.count"></td>
+      </tr>
+      <br><br>
+    <tr><td><input type="file" name="image" class="form-control"  (change)="changeListener($event)">
+    <td> <button type="button" name="image" class="btn btn-info" (click)="product_creation(product);">create</button></td>
+    
+  </table>  
+</form>
+</div> 
+
+
+<!-- <div class="form-content">
+<select>
+  <option *ngFor="let p of categorylist">
+  {{p.category_name}}
+  </option>
+</select>
+</div> -->

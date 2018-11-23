@@ -1,0 +1,11 @@
+.form-content{
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    -webkit-transform: translate( -40% );
+    transform: translate( -40% );
+    margin: 0;
+    width: 90%;
+    height: 600px;
+
+}

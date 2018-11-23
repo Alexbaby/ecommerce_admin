@@ -1,0 +1,45 @@
+
+<div class="form-content">
+  <h1></h1>
+
+  <br/> <br/>
+  <!-- <a [routerLink]="['/add_new_user']" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i>add user</a> -->
+<div class="col-sm-9">
+<table border="1" class="table">  
+               
+                  <tr>
+                  <!-- <th>USER_ID<a class="_pointer"  name="id" (click)="sort_userlist(id);"><span class="caret"></span></a></th>    -->
+                  <th>USERNAME<a class="_pointer" name="name" (click)="sort_userlist('name');" id="name"><span class="caret"></span></a></th>
+                  <th>EMAIL<a class="_pointer"   name="email" (click)="sort_userlist('email');" id="email" ><span class="caret"></span></a></th>
+                  <th>ADDRESS</th>
+                  <th>PHONE</th>              
+                  <th colspan="4">ACTION</th>
+                  </tr>
+                  <tr>
+                    <!-- <td><input type="text" name="id"  (keyup)="searchuser(search);" [(ngModel)]="search.id"></td> -->
+                    <td><input type="text" name="username" (keyup)="searchuser(search);" [(ngModel)]="search.username"></td>
+                    <td><input type="text" name="email"  (keyup)="searchuser(search);"[(ngModel)]="search.email"></td>
+                  </tr>
+                  <tr *ngFor="let p of user">
+                    <!-- <td>{{p.id}}</td> -->
+                    <td>{{p.name}}</td>
+                    <td>{{p.email}}</td>
+                    <td>{{p.address}}</td>
+                    <td>{{p.phone}}</td>
+                    <!-- <td>{{p.id}}</td> -->
+                    <td><a  [routerLink]="['/view-user',p.id]" class="btn btn-info"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                    <td><a  [routerLink]="['/update-user',p.id]"  class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a></td>
+                    <td><button type="button" class="btn btn-danger" (click)="block(p.id);" [disabled]="p.flag==1"><i class="glyphicon glyphicon-remove-circle"></i>block</button></td>
+                    <td><button type="button" class="btn btn-danger" (click)="unblock(p.id);"[disabled]="p.flag==0" ><i class="glyphicon glyphicon-check"></i>unblock</button></td>
+
+                  </tr>
+                </table>
+                <div class="text-center">
+                  <ul class="pagination">
+                      <li  *ngFor="let p of pages ;let i= index;"  [ngClass]="{'active': this.page==(i+1)}">
+                      <button type="button" class="btn btn-danger btn-md" id={{i}} [disabled]="this.page==(i+1)" (click)="pageChange(i)">{{p}}</button>                         
+                  </ul>
+              </div>
+                </div>
+                
+              </div>

@@ -1,0 +1,20 @@
+
+<div class="nav">
+<h3>$hopping (Admin)</h3>
+</div>
+
+<div class="side">
+<ul>
+ <a [routerLink]="['/create-products']"><li>create_products</li></a>
+  <!-- <a  [routerLink]="['/update-products']"><li>update_products</li></a>  -->
+    <a [routerLink]="['/view-products']"><li>view_products</li></a> 
+        <a [routerLink]="['/view-category']"><li>view category</li></a> 
+        <a [routerLink]="['/orders']"><li>orders</li></a> 
+        <a [routerLink]="['/list-all-users']"><li>users</li></a>     
+            
+  </ul>
+</div>
+  <div class="container">
+    <router-outlet></router-outlet>
+    </div>
+    

@@ -1,0 +1,16 @@
+.form-content{
+    position:absolute;
+    top:70px;
+    left:60%;
+    transform: translate(  -50% );
+    margin:0;
+    width:800px;
+    height:600px;
+
+}
+.text-center{
+    margin-left: 30%;
+}
+.text-center li{
+    width: 30px;
+}

@@ -1,0 +1,35 @@
+<div class="form-content">
+  <h1></h1>
+  <!-- 
+  
+  <a  class="btn btn-success" > <i class="glyphicon glyphicon-plus"></i> Create</a>
+  <a class="btn btn-danger"> <i class="glyphicon glyphicon-list"></i> List </a>
+  <a class="btn btn-primary" > <i class="glyphicon glyphicon-pencil"></i> Update</a> -->
+  <!-- <a  (click)="delete(employee);" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i>  Delete</a> -->
+  <br/> <br/>
+  <a [routerLink]="['/add-category']" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i>add category</a>
+  <div class="col-sm-9">
+  <table border="1" class="table">  
+                 
+                    <tr>
+                   <th>CATEGORY NAME<a class="_pointer"  name="name" (click)="sort_catlist('name');" id="name"><span class="caret"></span></a></th>                                  
+                    <th colspan="2">ACTION</th>
+                  </tr>
+                  <tr><td><input type="text" name="category" (keyup)="search_cat(search);"[(ngModel)]="search" id="category"></td></tr>
+                  <tr *ngFor="let p of items">
+                    <td>{{p.category_name}}</td>                   
+                    <!-- <td>{{p.id}}</td> -->
+                    <!-- <td><a [routerLink]="['/#']" class="btn btn-info"><i class="glyphicon glyphicon-eye-open"></i></a></td> -->
+                    <td><a [routerLink]="['/update_category',p.id]" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a></td>
+                    <td><a class="btn btn-danger"><i class="glyphicon glyphicon-trash" (click)="delete(p.id);"></i></a></td>
+                  </tr>
+  </table>
+  <div class="text-center">
+    <ul class="pagination">
+        <li  *ngFor="let p of pages ;let i= index;"  [ngClass]="{'active': this.page==(i+1)}">
+        <button type="button" class="btn btn-danger" id={{i}} [disabled]="this.page==(i+1)" (click)="pageChange(i)">{{p}}</button>                         
+    </ul>
+</div>
+  </div>
+  
+  

@@ -1,0 +1,12 @@
+<div class="form-content">
+  <h2>update category</h2>
+  <br>
+  <br>
+  <form>
+  <table class="table" >
+      <tr><td align="right" >Name:</td> <td><input type="text" name="name1" class="form-control" value="{{new_cat.category_name}}" [(ngModel)]="new_cat.category_name"></td></tr>
+      <tr><td align="right" ></td> <td align="right"><button type="button" class="btn btn-success" (click)="update(new_cat);"> update</button> </td> </tr>
+      
+</table>
+</form>
+</div> 

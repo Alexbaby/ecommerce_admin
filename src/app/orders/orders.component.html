@@ -1,0 +1,45 @@
+<div class="form-content">
+    <h1>users  Orders</h1>
+   <br/> <br/>
+
+<div class="col-sm-9">
+<table border="1" class="table table-striped">  
+               
+                  <tr>
+                 <!-- <th>Order ID<a class="_pointer"  name="Id" ><span class="caret"></span></a></th> -->
+                  <th>Useremail<a class="_pointer" name="email"(click)="sort_orderlist('email');" ><span class="caret"></span></a></th>
+                  <th>Delivery address</th>
+                  <th>Order date</th>
+                  <th>Delivery date</th>
+                  <th>Total Quantity</th>
+                  <th>Price</th>
+                  <th colspan="2">ACTION</th>
+                  </tr>
+                  <!-- <tr><td><input type="text" name="id"></td> -->
+                   <tr><td><input type="text" name="email"  (keyup)=" searchorder(search);" [(ngModel)]="search.email"></td>
+                    <td></td>
+                    <td><input type="text" name="created"  (keyup)=" searchorder(search);" [(ngModel)]="search.created"></td>
+                    <td><input type="text" name="delivered" (keyup)=" searchorder(search);" [(ngModel)]="search.delivered" ></td>
+                    </tr>
+                
+                 <tr *ngFor="let p of all_products">
+                    <!-- <td>{{p.order_id}}</td> -->
+                    <td>{{p.email}}</td>
+                    <td>{{p.delivery_address}}</td>
+                    <td>{{p.created_at|date}}</td>
+                    <td>{{p.delivery_at}}</td>
+                    <td>{{p.total_quantity}}</td>
+                    <td>{{p.total}}</td>
+                    <!-- <td>{{p.order_id}}</td> -->
+                    <td><button type="button" [routerLink]="['/view-user-order',p.order_id]" class="btn btn-info" [disabled]="p.flag==1"><i class="glyphicon glyphicon-eye-open">view</i></button></td>
+                    <td><button type="button" class="btn btn-primary"(click)="delete_userorder(p.order_id);" [disabled]="p.flag==1"><i class="glyphicon glyphicon-remove">cancel</i></button></td>
+                 </tr>
+                </table>
+       
+            <div class="text-center">
+                    <ul class="pagination">
+                        <li  *ngFor="let p of pages ;let i= index;"  [ngClass]="{'active': this.page==(i+1)}">
+                        <button type="button" class="btn btn-info" id={{i}} [disabled]="this.page==(i+1)" (click)="pageChange(i)">{{p}}</button>                         
+                    </ul>
+                </div>
+            </div>
