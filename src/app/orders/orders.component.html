@@ -32,7 +32,7 @@
                     <td>{{p.total}}</td>
                     <!-- <td>{{p.order_id}}</td> -->
                     <td><button type="button" [routerLink]="['/view-user-order',p.order_id]" class="btn btn-info" [disabled]="p.flag==1"><i class="glyphicon glyphicon-eye-open">view</i></button></td>
-                    <td><button type="button" class="btn btn-primary"(click)="delete_userorder(p.order_id);" [disabled]="p.flag==1"><i class="glyphicon glyphicon-remove">cancel</i></button></td>
+                    <td><button type="button" class="btn btn-primary"(click)="delete_userorder(p.order_id);" [disabled]="p.flag==1"><i class="glyphicon glyphicon-remove">cancelled</i></button></td>
                  </tr>
                 </table>
        

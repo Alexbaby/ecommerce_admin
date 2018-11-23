@@ -1,4 +1,4 @@
-.form-content{
+/* .form-content{
     position:absolute;
     top:200px;
     left:50%;
@@ -7,4 +7,13 @@
     width:800px;
     height:600px;
 
+} */
+.form{
+    
+        margin-left: 56px;
+        
+            margin-top: 56px
+}
+.create{
+    margin-left: 982px;
 }

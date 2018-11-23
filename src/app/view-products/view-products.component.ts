@@ -22,7 +22,7 @@ export class ViewProductsComponent implements OnInit {
   page = 1;
   pages = [];
   number: number;
-  pagesize = 4;
+  pagesize = 8;
   totalpage:number;
   usersearch='';
   nameflag=0;
@@ -129,7 +129,8 @@ search_product(search)
 
  
 delete1(id:number)
-{
+{    
+        if(confirm("are you sure to delete this item")){  
         console.log("inside this delete operations",id);
         this.Adminservices.delete1(id)
         .subscribe(
@@ -140,6 +141,7 @@ delete1(id:number)
     }
   );
 
+}
 }
 }
 

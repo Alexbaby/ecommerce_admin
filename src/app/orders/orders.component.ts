@@ -15,7 +15,7 @@ export class OrdersComponent implements OnInit {
 
   constructor(private router: Router,private AdminServicesService:AdminServicesService) { }
    totalpage;
-   pagesize=5;
+   pagesize=8;
    pages=[];
    number:number;
    page=1;
@@ -36,7 +36,7 @@ export class OrdersComponent implements OnInit {
    pageChange(i){
    
      this.page=i+1;
-     alert("current page: "+this.page );
+    //  alert("current page: "+this.page );
      this.dispaly_allorders();
    }
 
