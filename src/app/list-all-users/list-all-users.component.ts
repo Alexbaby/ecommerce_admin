@@ -24,7 +24,7 @@ export class ListAllUsersComponent implements OnInit {
    page = 1;
    pages = [];
    number: number;
-   pagesize =5;
+   pagesize =8;
    totalpage;
    sortby="name asc"
   constructor(private router: Router,private AdminServicesService:AdminServicesService,private activatedRoute:ActivatedRoute) { }

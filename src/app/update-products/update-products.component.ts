@@ -19,6 +19,8 @@ export class UpdateProductsComponent implements OnInit {
   count:null
   }
   image:string="";
+  errors={};
+
   constructor(private router: Router,private AdminServicesService:AdminServicesService,private activatedRoute:ActivatedRoute) { }
   
   ngOnInit() {
@@ -70,8 +72,15 @@ export class UpdateProductsComponent implements OnInit {
     .subscribe(
       (Response:any)=>{
         console.log("updated dated image",Response);
+        
         this.router.navigate(['view-product',product.id])
 
+      },
+      (err)=>{
+       
+        this.errors=err.error.errors;
+        console.log("new error msg",err);
+        
       }
     );
   }

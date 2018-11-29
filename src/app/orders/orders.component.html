@@ -3,7 +3,7 @@
    <br/> <br/>
 
 <div class="col-sm-9">
-<table border="1" class="table table-striped">  
+<table border="1" class="table table-hover">  
                
                   <tr>
                  <!-- <th>Order ID<a class="_pointer"  name="Id" ><span class="caret"></span></a></th> -->
@@ -18,8 +18,8 @@
                   <!-- <tr><td><input type="text" name="id"></td> -->
                    <tr><td><input type="text" name="email"  (keyup)=" searchorder(search);" [(ngModel)]="search.email"></td>
                     <td></td>
-                    <td><input type="text" name="created"  (keyup)=" searchorder(search);" [(ngModel)]="search.created"></td>
-                    <td><input type="text" name="delivered" (keyup)=" searchorder(search);" [(ngModel)]="search.delivered" ></td>
+                    <td><input type="date" name="created"   (change)=" searchorder(search);" [(ngModel)]="search.created"></td>
+                    <td><input type="date" name="delivered" (change)=" searchorder(search);" [(ngModel)]="search.delivered" ></td>
                     </tr>
                 
                  <tr *ngFor="let p of all_products">
@@ -31,7 +31,7 @@
                     <td>{{p.total_quantity}}</td>
                     <td>{{p.total}}</td>
                     <!-- <td>{{p.order_id}}</td> -->
-                    <td><button type="button" [routerLink]="['/view-user-order',p.order_id]" class="btn btn-info" [disabled]="p.flag==1"><i class="glyphicon glyphicon-eye-open">view</i></button></td>
+                    <td><button type="button" [routerLink]="['/view-user-order',p.order_id]" class="btn btn-info" ><i class="glyphicon glyphicon-eye-open">view</i></button></td>
                     <td><button type="button" class="btn btn-primary"(click)="delete_userorder(p.order_id);" [disabled]="p.flag==1"><i class="glyphicon glyphicon-remove">cancelled</i></button></td>
                  </tr>
                 </table>

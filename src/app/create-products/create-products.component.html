@@ -39,21 +39,28 @@
         <option value="audi">Audi</option> -->
         <!-- <input type="text" name="name" placeholder="name of product" class="form-control">   -->
       </select>
+      <div *ngIf="errors" style="color: red">{{errors.category}}</div>
         <h4>name</h4>
         <input type="text" name="name" class="form-control"  [(ngModel)]="product.name"><br>
+        <div *ngIf="errors" style="color: red">{{errors.name}}</div>
         <h4>description</h4>
         <input type="text" name="description" placeholder="description" class="form-control" [(ngModel)]="product.description"><br>
+        <div *ngIf="errors" style="color: red">{{errors.description}}</div>
         <h4>price</h4>
-        <input type="text" name="price" placeholder="description" class="form-control"  [(ngModel)]="product.price"><br>
+        <input type="text" name="price" placeholder="price" class="form-control"  [(ngModel)]="product.price"><br>
+        <div *ngIf="errors" style="color: red">{{errors.price}}</div>
         <h4>quantity</h4>
         <input type="text" name="count" placeholder="description" class="form-control"  [(ngModel)]="product.count"><br>
-
-        <div class="custom-file mb-3">
+        <div *ngIf="errors" style="color: red">{{errors.count}}</div>
+        <tr><td><input type="file" name="image" class="form-control"  (change)="changeListener($event)"><br>
+          <button type="button" class="btn btn-success create" (click)="product_creation(product);">create</button>
+  
+        <!-- <div class="custom-file mb-3">
                       <input type="file" class="custom-file-input" id="customFile" name="filename" (change)="changeListener($event)">
                       <label class="custom-file-label" for="customFile">Choose file</label>
                       <br>
                       <button type="button" class="btn btn-success create" (click)="product_creation(product);">create</button>
           </div>
-     
+      -->
   </div>
 </div>

@@ -20,6 +20,7 @@ import { ListAllUsersComponent } from './list-all-users/list-all-users.component
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 
@@ -48,7 +49,9 @@ import { AddNewUserComponent } from './add-new-user/add-new-user.component';
     BrowserModule,
     HttpClientModule,
     RouterModule,
-   AppRoutingModule
+   AppRoutingModule,
+   TooltipModule
+   
   ],
   providers: [
     AdminServicesService

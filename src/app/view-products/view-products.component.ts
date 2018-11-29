@@ -9,6 +9,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
   styleUrls: ['./view-products.component.css']
 })
 export class ViewProductsComponent implements OnInit {
+   
   items
   product :Product={
     id:null,
@@ -29,15 +30,15 @@ export class ViewProductsComponent implements OnInit {
   categoryflag=0;
   sortby="category asc"
   
-  search:any={
+   search:any={
     category:"",
-    name:"",
-   
-  }
+    name:"",   
+             }
+
   constructor(private router:Router,private Adminservices:AdminServicesService,private http:HttpClient,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
-  this.display_items();
+          this.display_items();
   }
   // dispaly items functions
   
@@ -56,16 +57,16 @@ export class ViewProductsComponent implements OnInit {
                           this.pages = [];
                           for (let i = 1; i <= this.number; i++) {
                             this.pages.push(i);
-      }
-                 console.log(this.pages);           
-    }
-  );
-}
+                                                                 }
+                            console.log(this.pages);           
+                                       }
+                              );
+               }
 
 pageChange(i)
 {
-      this.page=i+1;
-      this.display_items();
+        this.page=i+1;
+        this.display_items();
 }
 
 //sorting products
@@ -135,11 +136,11 @@ delete1(id:number)
         this.Adminservices.delete1(id)
         .subscribe(
           (Response:any)=>{
-            console.log("deleted items",Response);
-            this.display_items();
+                            console.log("deleted items",Response);
+                            this.display_items();
     
-    }
-  );
+                          }
+                  );
 
 }
 }

@@ -1,5 +1,8 @@
 
 <div class="container">
+    <button type="button" class="btn btn-info style glyphicon glyphicon-th-list"  [routerLink]="['/view-products']">view productlist</button> 
+    <button type="button" class="btn btn-primary style glyphicon glyphicon-th-list"  [routerLink]="['/create-products']">create one</button> 
+    <br><br>
   <div class="col-sm-6">
    
     <div class="thumbnail">
@@ -10,10 +13,10 @@
   </div>
   <div class="col-sm-6">
     <h2>{{product.name}}</h2>
-     <p> {{product.price}}</p>
-    <h4>HighLights</h4>
-   <li> {{product.description}}</li>
-   <li>{{product.count}}</li>
+     <p style="color: rebeccapurple"> price:{{product.price}}</p>
+    <h3>HighLights</h3>
+   <p> {{product.description}}</p>
+   <p> count:{{product.count}}</p>
    <!-- <li>{{product.id}}</li> -->
    <br><br>
    <button type="button" class="buybtn btn btn-danger btn-lg" [routerLink]="['/update-products',product.id]">

@@ -23,7 +23,7 @@ export class OrdersComponent implements OnInit {
    sortby="email asc"
     search:any={
     email:"",
-    created:"",
+    date:"",
     delivered:"",
   }
    usersearch='';
@@ -69,47 +69,49 @@ export class OrdersComponent implements OnInit {
 //order sorting
 sort_orderlist(sortby='')
 {
-  console.log("sorting email",sortby);
+              console.log("sorting email",sortby);
 
 
-  if(sortby =='email')
- {
-   if(this.emailflag==0)
-   {
-     this.sortby="email desc"
-    //  this.dispaly_allorders(this.usersearch,'email asc');
-     this.emailflag=1;
-     this.dispaly_allorders();
-   }
-   else{
-    this.sortby="email asc";
-    this.emailflag=0;
-    this.dispaly_allorders();
-   }
- }
+              if(sortby =='email')
+            {
+              if(this.emailflag==0)
+              {
+                this.sortby="email desc"
+                //  this.dispaly_allorders(this.usersearch,'email asc');
+                this.emailflag=1;
+                this.dispaly_allorders();
+              }
+              else{
+                this.sortby="email asc";
+                this.emailflag=0;
+                this.dispaly_allorders();
+              }
+            }
 }
 
   searchorder(search:any)
   {
-    this.page=1;
-  console.log("search items",search);
-  this.usersearch='';
-  if(search.email!=="")
-  {
-    this.usersearch+="&search[email]="+search.email;
-  }
-  if(search.created!=="")
-  {
-    this.usersearch+="&search[created]="+search.created;
-  }
-  if(search.delivered!=="")
-  {
-    this.usersearch+="&search[delivered]="+search.delivered;
-  }
-  console.log("search items",this.usersearch);
-  this.dispaly_allorders();
- 
-  }
+              this.page=1;
+              console.log("search items",search);
+
+              this.usersearch='';
+
+              if(search.email!=="")
+              {
+                this.usersearch+="&search[email]="+search.email;
+              }
+              if(search.created!=="")
+              {
+                this.usersearch+="&search[created_at]="+search.created;
+              }
+              if(search.delivered!=="")
+              {
+                this.usersearch+="&search[delivered_at]="+search.delivered;
+              }
+              console.log("search items",this.usersearch);
+              this.dispaly_allorders();
+            
+}
 
   delete_userorder(id){
     console.log("inside this user order cancel fn",id);

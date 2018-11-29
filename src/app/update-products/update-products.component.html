@@ -35,15 +35,20 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">update data here</h5>
+              <h5 class="card-title">update product here</h5>
               <p class="card-text"></p>
               <table class="table">
                   <tr>
-                    <td>Name:<input type="text" name="name" class="form-control" value="{{product.name}}" [(ngModel)]="product.name"></td>
-                    <td>price:<input type="text" name="name" class="form-control" value="{{product.price}}" [(ngModel)]="product.price"></td>
-                    <td>count:<input type="text" name="name" class="form-control" value="{{product.count}}" [(ngModel)]="product.count"></td> 
-                    <td>description:<input type="text" name="name" class="form-control" value="{{product.description}}" [(ngModel)]="product.description"></td> 
-                  </tr>
+                    <td>Name:<input type="text" name="name" class="form-control" value="{{product.name}}" [(ngModel)]="product.name"></td></tr>
+                    <div *ngIf="errors" style="color: red;">{{errors.name}}</div>
+                    <tr><td>price:<input type="text" name="name" class="form-control" value="{{product.price}}" [(ngModel)]="product.price"></td></tr>
+                    
+                    <div *ngIf="errors" style="color: red;">{{errors.price}}</div>
+                    <tr><td>count:<input type="text" name="name" class="form-control" value="{{product.count}}" [(ngModel)]="product.count"></td></tr>
+                    <div *ngIf="errors" style="color: red;">{{errors.count}}</div>
+                    <tr><td>description:<input type="text" name="name" class="form-control" value="{{product.description}}" [(ngModel)]="product.description"></td> </tr>
+                    <div *ngIf="errors" style="color: red;">{{errors.description}}</div> 
+                 
                   <tr>
                      <td>Image:<input type="file"  name="image" class="form-control"  (change)="changeListener($event)"  value=""></td>
     

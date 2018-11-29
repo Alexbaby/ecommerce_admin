@@ -12,20 +12,23 @@ import {new_cat}from '../cat'
 })
 export class CreateProductsComponent implements OnInit {
   new_cat:new_cat[];
-  product :Product={
+  product :any={
     id:null,
     category:"",
     name:"",
     price:null,
     image:"",
-    count:null
+    count:null,
+    description:""
   } 
  image:string="";
- errors;
+
+ 
 
   constructor(private router: Router,private AdminServicesService:AdminServicesService ) { }
    categorylist:any[]=[];
-   
+   errors={};
+
    ngOnInit() {
     this.cat_list();
   }
@@ -64,19 +67,21 @@ export class CreateProductsComponent implements OnInit {
 
   product_creation(product){
      product.image=this.image;
+     
     console.log("inside this fn new product creation",product);
     this.AdminServicesService.product_creation(product)
     .subscribe(
       (Response:any)=>{
         console.log("new product",Response);
-        this.router.navigate(['view-products']);
+        let id=Response.data.id;
+        console.log("new id",id);
+        this.router.navigate(['view-product',id]);
       },
       (err)=>{
-        console.log("errors",err);
+        console.log("creation errors",err);
         this.errors=err.error.errors;
-        console.log("error data",this.errors);
-        console.log("price",this.errors.price);
-        console.log("count",this.errors.count);
+        console.log("price",this.errors);
+        
       }
     );
 

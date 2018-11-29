@@ -15,6 +15,7 @@ export class UpdateCategoryComponent implements OnInit{
   new_cat:new_cat={
     category:"",
   };
+  errors={};
   constructor(private router: Router,private AdminServicesService:AdminServicesService,private activatedRoute:ActivatedRoute) { }
  
   ngOnInit(){
@@ -43,6 +44,11 @@ update(new_cat,id){
     (Response:any)=>{
       console.log("updated category",Response);
      this.router.navigate(['view-category']);
+    },
+    (err)=>{
+     
+      this.errors=err.error.errors;
+      console.log("error msg",this.errors);
     }
   );
 
