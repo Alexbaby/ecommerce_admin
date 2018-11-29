@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AdminServicesService} from '../admin-services.service';
-import { Product }from '../product';
-import {new_cat}from '../cat'
 
 @Component({
   selector: 'app-add-category',
@@ -12,6 +10,7 @@ import {new_cat}from '../cat'
 })
 export class AddCategoryComponent implements OnInit {
   category_name="";
+  errors:{};
   constructor(private router: Router,private AdminServicesService:AdminServicesService) { }
 
   ngOnInit() {
@@ -25,6 +24,11 @@ export class AddCategoryComponent implements OnInit {
     (Response:any)=>{
     console.log(Response);
     this.router.navigate(['view-category']);
+  },
+  (err)=>{
+    console.log(err)
+    this.errors=err.error.errors;
+    console.log("error msg",this.category_name);
   }
   );
   }

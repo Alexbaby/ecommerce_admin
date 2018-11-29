@@ -3,9 +3,10 @@
 <div class="form-content">
 <form>
 <table class="table" >
-<tr><td align="right" >Category Name:</td> <td><input type="text" name="name" [(ngModel)]="category_name" class="form-control" placeholder=" Name of category" ></td> </tr>
+<tr><td align="right" >Category Name:</td> <td><input type="text" name="name" [(ngModel)]="category_name" class="form-control" placeholder=" Name of category" ></td>
+</tr><div *ngIf="errors" style="color: purple">{{errors.category_name}}</div>
 <tr><td align="right" ></td> <td align="right"><button type="button"  class="btn btn-primary" (click)="Create();" >Create </button>  </td> </tr> 
 
 </table>
 </form>
-</div>
+</div>  
